@@ -1,0 +1,57 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/ecommerce-auth/src",
+  "monorepo": true,
+  "root": "apps/ecommerce-auth",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/ecommerce-auth/tsconfig.app.json"
+  },
+  "projects": {
+    "ecommerce-auth": {
+      "type": "application",
+      "root": "apps/ecommerce-auth",
+      "entryFile": "main",
+      "sourceRoot": "apps/ecommerce-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ecommerce-auth/tsconfig.app.json"
+      }
+    },
+    "ecommerce-customers": {
+      "type": "application",
+      "root": "apps/ecommerce-customers",
+      "entryFile": "main",
+      "sourceRoot": "apps/ecommerce-customers/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ecommerce-customers/tsconfig.app.json"
+      }
+    },
+    "ecommerce-products": {
+      "type": "application",
+      "root": "apps/ecommerce-products",
+      "entryFile": "main",
+      "sourceRoot": "apps/ecommerce-products/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ecommerce-products/tsconfig.app.json"
+      }
+    },
+    "ecommerce-shopping-cart": {
+      "type": "application",
+      "root": "apps/ecommerce-shopping-cart",
+      "entryFile": "main",
+      "sourceRoot": "apps/ecommerce-shopping-cart/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ecommerce-shopping-cart/tsconfig.app.json"
+      }
+    },
+    "ecommerce-common": {
+      "type": "library",
+      "root": "libs/ecommerce-common",
+      "entryFile": "index",
+      "sourceRoot": "libs/ecommerce-common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/ecommerce-common/tsconfig.lib.json"
+      }
+    }
+  }
+}
