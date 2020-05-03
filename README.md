@@ -35,6 +35,13 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Start up Mysql by Docker
+```bash
+# Docker run
+$ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=ecommerce-secret -d mysql
+```
+
 ## Build docker
 
 ```bash
