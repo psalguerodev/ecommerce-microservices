@@ -5,15 +5,12 @@ import { AuthFacade } from './auth.facade';
 
 @Controller('auth')
 export class AuthController {
-
-  constructor(
-    private readonly authFacade: AuthFacade
-  ) { }
+  constructor(private readonly authFacade: AuthFacade) {}
 
   @Get()
   @UseGuards(AuthGuard('jwt'))
   sayHello() {
-    return 'From AuthController'
+    return 'From AuthController';
   }
 
   @Post('/token')
@@ -25,5 +22,4 @@ export class AuthController {
   async checkToken() {
     return { ok: true };
   }
-
 }

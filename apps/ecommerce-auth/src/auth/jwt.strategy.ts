@@ -5,7 +5,6 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-
   constructor(private readonly authService: AuthService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -17,8 +16,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     const { email } = payload;
     const user = this.authService.validateUser(email);
 
-    if (!user)
-      return done(new UnauthorizedException('Unauthorized access'), false);
+    if (!user) return done(new UnauthorizedException('Unauthorized access'), false);
 
     return done(null, user, payload.iat);
   }

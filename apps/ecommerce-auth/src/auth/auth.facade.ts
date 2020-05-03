@@ -5,10 +5,11 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthFacade {
+  constructor(private readonly authService: AuthService) {}
 
-  constructor(private readonly authService: AuthService) { }
-
-  async signInByPassoword(signInByPasswordDto: SignInByEmailAndPassword): Promise<{ accessToken: string, user: UserDocument }> {
+  async signInByPassoword(
+    signInByPasswordDto: SignInByEmailAndPassword,
+  ): Promise<{ accessToken: string; user: UserDocument }> {
     const validateUser = await this.authService.validateUserByEmaiAndPassword(signInByPasswordDto);
 
     if (!validateUser.exist || !validateUser.isValid)
@@ -25,5 +26,4 @@ export class AuthFacade {
 
     return { accessToken, user: validateUser.user };
   }
-
 }
